@@ -5,6 +5,7 @@ defmodule Crdt do
     import Supervisor.Spec, warn: false
 
     children = [
+      worker(Crdt.State, [])
     ]
 
     opts = [strategy: :one_for_one, name: Crdt.Supervisor]
